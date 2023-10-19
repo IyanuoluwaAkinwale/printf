@@ -14,14 +14,14 @@ int printf_string(va_list vals)
         if (str == NULL)
         {
                 str = "(null)";
-                _strlen(str) = length;
+                length = _strlen(str);
                 for (x =0; x < length; x++)
                         _putchar(str[x]);
                 return (length);
         }
         else
         {
-                _strlen(str) = length;
+                length = _strlen(str);
                 for (x = 0; x < length; x++)
                         _putchar(str[x]);
                 return (length);
