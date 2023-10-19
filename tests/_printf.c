@@ -7,7 +7,7 @@
 
 int _printf(const char *format, ...)
 {
-        match m[] = {
+        int m[] = {
                 {"%c", printf_char}, {"%s", printf_string}, {"%%", printf_per}, {"%d", _printf_deci}, {"%i", _printf_int}
         };
 
@@ -25,8 +25,9 @@ Begin:
                 i = 4;
                 while (i >= 0)
                 {
-                        if (m[i].id[0] == format[x] &&, [j].id[1] == format[x + 1])                        {
-                                len = len + m[i].f(args);
+                        if (m[i].id[0] == format[x] && [j].id[1] == format[x + 1])
+			{
+				len = len + m[i].f(args);
                                 x = x + 2;
                                 goto Begin;
                         }
