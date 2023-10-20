@@ -6,9 +6,11 @@
 
 int printf_string(va_list vals)
 {
-        int x, char *str, int length;
+        int x;
+	char *str;
+	int length;
 
-        va_arg(vals, char *) = str;
+        va_arg(vals, char *str) = str;
         if (str == NULL)
         {
                 str = "(null)";

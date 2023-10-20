@@ -6,7 +6,7 @@
 int _print_deci(va_list args)
 {
         int d = va_arg(args, int);
-        int digit, end = d % 10, figure, exp = 1;
+        int digit, end = d % 10, figure, exp = 1, num;
         int x = 1;
 
         d = d / 10;
@@ -48,7 +48,7 @@ int _print_deci(va_list args)
 int _print_int(va_list args)
 {
         int d = va_arg(args, int);
-        int digit, end = d % 10, figure, exp = 1;
+        int digit, end = d % 10, figure, exp = 1, num;
         int x = 1;
 
         d = d / 10;
