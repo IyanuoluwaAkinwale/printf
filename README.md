@@ -60,10 +60,10 @@ This is a repo that contains files and codes used in creation of our own printf
 - [x] Handle conversion specifier ```S```.
 - [x] Handle conversion specifier ```p```.
 - [x] Handle flag characters ```+```, space, and ```#``` for non-custom conversion specifiers.
-- [ ] Handle length modifiers ```l``` and ```h``` for non-custom conversion specifiers.
+- [x] Handle length modifiers ```l``` and ```h``` for non-custom conversion specifiers.
 - [ ] Handle the field width for non-custom conversion specifiers.
-- [ ] Handle the precision for non-custom conversion specifiers.
-- [ ] Handle the ```0``` flag character for non-custom conversion specifiers.
+- [x] Handle the precision for non-custom conversion specifiers.
+- [x] Handle the ```0``` flag character for non-custom conversion specifiers.
 - [x] Handle the custom conversion specifier ```r``` that prints the reversed string.
 - [x] Handle the custom conversion specifier ```R``` that prints the rot13'ed string.
 - [ ] All above options should work well together.
@@ -80,23 +80,21 @@ This is a repo that contains files and codes used in creation of our own printf
 **man_3_printf**
 * manual page for the custom ```_printf``` function.
 
-**functions.c** **functions1.c** **functions2.c**
+**functions_printf.c** **2-functions_printf.c** **3-functions_printf.c**
 * contains all function of each specifier used for ```_printf```.
 * all function have its own description inside the file.
 
-**handle_print.c**
+**handle_print-printf.c**
 * contains arguments types used for ```_printf```.
 
-**get_flags.c**
+**get_flags-printf.c**
 * contains all function for each flag use for ```_printf```.
 
-**utils.c**
+**utils_printf.c**
 * contains some necessary functionalities for ```_printf```.
 
-**ger_width.c**
+**get_width-printf.c**
 * contains functions to get width for spcifics spcifiers.
 
-**writee_handlers.c**
+**write_handlers-printf.c**
 * contains write functions.
-
-By Akinwale Iyanuoluwa and Abiodun Lawal
