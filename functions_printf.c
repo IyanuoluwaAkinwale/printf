@@ -1,5 +1,6 @@
 #include "main.h"
 
+/************************* PRINT CHAR *************************/
 
 /**
  * print_char - Prints a char
@@ -18,7 +19,7 @@ int print_char(va_list types, char buffer[],
 
 	return (handle_write_char(c, buffer, flags, width, precision, size));
 }
-
+/************************* PRINT A STRING *************************/
 /**
  * print_string - Prints a string
  * @types: List a of arguments
@@ -73,10 +74,10 @@ int print_string(va_list types, char buffer[],
 
 	return (write(1, str, length));
 }
-
+/************************* PRINT PERCENT SIGN *************************/
 /**
  * print_percent - Prints a percent sign
- * @types: List of arguments
+ * @types: Lista of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
  * @width: get width.
@@ -96,9 +97,10 @@ int print_percent(va_list types, char buffer[],
 	return (write(1, "%%", 1));
 }
 
+/************************* PRINT INT *************************/
 /**
  * print_int - Print int
- * @types: List of arguments
+ * @types: Lista of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
  * @width: get width.
@@ -139,9 +141,10 @@ int print_int(va_list types, char buffer[],
 	return (write_number(is_negative, i, buffer, flags, width, precision, size));
 }
 
+/************************* PRINT BINARY *************************/
 /**
  * print_binary - Prints an unsigned number
- * @types: List of arguments
+ * @types: Lista of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
  * @width: get width.
@@ -152,9 +155,9 @@ int print_int(va_list types, char buffer[],
 int print_binary(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
-	unsigned int p, q, j, sum;
+	unsigned int n, m, i, sum;
 	unsigned int a[32];
-	int counter;
+	int count;
 
 	UNUSED(buffer);
 	UNUSED(flags);
@@ -162,24 +165,24 @@ int print_binary(va_list types, char buffer[],
 	UNUSED(precision);
 	UNUSED(size);
 
-	p = va_arg(types, unsigned int);
-	q = 2147483648; /* (2 ^ 31) */
-	a[0] = p / q;
-	for (j = 1; j < 32; j++)
+	n = va_arg(types, unsigned int);
+	m = 2147483648; /* (2 ^ 31) */
+	a[0] = n / m;
+	for (i = 1; i < 32; i++)
 	{
-		p /= 2;
-		a[j] = (p / q) % 2;
+		m /= 2;
+		a[i] = (n / m) % 2;
 	}
-	for (j = 0, sum = 0, counter = 0; j < 32; j++)
+	for (i = 0, sum = 0, count = 0; i < 32; i++)
 	{
 		sum += a[i];
-		if (sum || j == 31)
+		if (sum || i == 31)
 		{
-			char y = '0' + a[j];
+			char z = '0' + a[i];
 
-			write(1, &y, 1);
-			counter++;
+			write(1, &z, 1);
+			count++;
 		}
 	}
-	return (counter);
+	return (count);
 }
